@@ -14,7 +14,7 @@ require("lsp-config.null-ls")
 
 --Plugins
 require("plugins.packer")
-require("plugins.buffer")
+--require("plugins.buffer")
 require("plugins.lualine")
 require("plugins.Comment")
 require("plugins.gitsigns")
