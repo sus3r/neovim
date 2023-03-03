@@ -1,5 +1,5 @@
 -- import lspsaga safely
-local saga_status, saga = pcall(require, "lspsaga")
+local saga_status, saga = pcall(require, "lazy")
 if not saga_status then
 	return
 end

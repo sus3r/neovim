@@ -5,24 +5,24 @@ local opts = { noremap = true, silent = true }
 map("i", "jk", "<ESC>", opts)
 
 --Clear search highlights
-map("n", "<space>nh", ":nohl<CR>", opts)
+map("n", "<space>nhl", ":nohl<CR>", opts)
 
 --Save & Quit
 map("n", "<C-s>", ":w<CR>", opts)
 map("n", "<C-q>", ":q<CR>", opts)
 
 --Erase/Next buffer
-map("n", "q", ":bw<CR>", opts)
+map("n", "<A-q>", ":bw<CR>", opts)
 
 --Next/Previous buffer
-map("n", "<A-l>", ":bn<CR>", opts)
-map("n", "<A-h>", ":bp<CR>", opts)
+map("n", "{", ":bn<CR>", opts)
+map("n", "}", ":bp<CR>", opts)
 
 --Window navigator
-map("n", "mk", ":wincmd k<CR>", opts)
-map("n", "mj", ":wincmd j<CR>", opts)
-map("n", "mh", ":wincmd h<CR>", opts)
-map("n", "ml", ":wincmd l<CR>", opts)
+map("n", "<A-k>", ":wincmd k<CR>", opts)
+map("n", "<A-j>", ":wincmd j<CR>", opts)
+map("n", "<A-h>", ":wincmd h<CR>", opts)
+map("n", "<A-l>", ":wincmd l<CR>", opts)
 
 --Moving lines
 map("n", "<S-j>", ":m .+1<CR>==", opts)
@@ -31,23 +31,27 @@ map("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
 map("v", "<S-k>", ":m '<-2<CR>gv=gv", opts)
 
 -------------------PLUGINS KEYBINDS--------------------
+--ToggleTerm
+map("n", "<space>t", ":ToggleTerm<CR>", opts)
+map("n", "<space>e", ":NvimTreeToggle<CR>", opts)
+--FZF
+map("n", "fp", "<cmd>:FZF<CR>", opts)
 
 --File explorer
-map("n", "<space>e", ":NvimTreeToggle<CR>", opts)
+-- map("n", "<space>e", ":NvimTreeToggle<CR>", opts)
 
 --Telescope
-map("n", "gs", "<cmd>:Telescope grep_string<CR>", opts)
-map("n", "rg", "<cmd>:Telescope live_grep<CR>", opts)
-map("n", "fp", "<cmd>:Telescope find_files<CR>", opts)
-map("n", "fb", "<cmd>:Telescope buffers<CR>", opts)
-map("n", "of", "<cmd>:Telescope oldfiles<CR>", opts)
-map("n", "<space>mk", "<cmd>:Telescope keymaps<CR>", opts)
+-- map("n", "gs", "<cmd>:Telescope grep_string<CR>", opts)
+-- map("n", "rg", "<cmd>:Telescope live_grep<CR>", opts)
+-- map("n", "fb", "<cmd>:Telescope buffers<CR>", opts)
+-- map("n", "of", "<cmd>:Telescope oldfiles<CR>", opts)
+-- map("n", "<space>mk", "<cmd>:Telescope keymaps<CR>", opts)
 
 --Telescope git
-map("n", "<space>gc", "<cmd>Telescope git_commits<cr>", opts)
-map("n", "<space>gfc", "<cmd>Telescope git_bcommits<cr>", opts)
-map("n", "<space>gb", "<cmd>Telescope git_branches<cr>", opts)
-map("n", "<space>gs", "<cmd>Telescope git_status<cr>", opts)
+-- map("n", "<space>gc", "<cmd>Telescope git_commits<cr>", opts)
+-- map("n", "<space>gfc", "<cmd>Telescope git_bcommits<cr>", opts)
+-- map("n", "<space>gb", "<cmd>Telescope git_branches<cr>", opts)
+-- map("n", "<space>gs", "<cmd>Telescope git_status<cr>", opts)
 
 --Gitsigns
 map("n", "g[", ":Gitsigns next_hunk<CR>", opts)
@@ -55,7 +59,7 @@ map("n", "g]", ":Gitsigns prev_hunk<CR>", opts)
 map("n", "<space>gh", ":Gitsigns preview_hunk<CR>", opts)
 
 --LSP keybinds
-map("n", "<space>rs", ":LspRestart<CR>", opts)
+map("n", "<space>res", ":LspRestart<CR>", opts)
 
 ------------------------DEBBUGER-------------------------
 map("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)

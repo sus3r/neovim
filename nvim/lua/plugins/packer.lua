@@ -47,9 +47,10 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
 	--Plugins for better exp
-	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
-	use("nvim-tree/nvim-tree.lua")
+	--use({ "nvim-telescope/telescope.nvim", tag = "0.1.0" })
+	--use("nvim-tree/nvim-tree.lua")
 	use("numToStr/Comment.nvim")
+	use("akinsho/toggleterm.nvim")
 
 	--Much plugins use it
 	use("nvim-lua/plenary.nvim")
